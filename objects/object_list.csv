@@ -1,2 +1,4 @@
 filename,object_location,image_small,image_thumb
-PeteSeegerOnDeck.jpg,/objects/PeteSeegerOnDeck.jpg,/objects/small/peteseegerondeck_sm.jpg,/objects/thumbs/peteseegerondeck_th.jpg
+image_build.jpg,/objects/image_build.jpg,/objects/small/image_build_sm.jpg,/objects/thumbs/image_build_th.jpg
+image_launch.jpg,/objects/image_launch.jpg,/objects/small/image_launch_sm.jpg,/objects/thumbs/image_launch_th.jpg
+image_sail.jpg,/objects/image_sail.jpg,/objects/small/image_sail_sm.jpg,/objects/thumbs/image_sail_th.jpg
