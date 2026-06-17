@@ -7,6 +7,8 @@
 require 'image_optim' unless Gem.win_platform?
 require 'mini_magick'
 
+
+
 def process_and_optimize_image(filename, file_type, output_filename, size, density)
   image_optim = ImageOptim.new(svgo: false) unless Gem.win_platform?
   if filename == output_filename && file_type == :image && !Gem.win_platform?
