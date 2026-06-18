@@ -47,7 +47,11 @@
         {% if include.title %}<{{ include.heading_level | default: 'h2' | strip }} class="card-title h5">{{ include.title }}</{{ include.heading_level | default: 'h2' | strip }}>{% endif %}
         <p class="card-text">
             {% for s in topTerms %}
-            <a class="btn btn-sm btn-{{ include.btn-color | default: 'primary' }} m-1" href="{{ s | strip | url_param_escape | prepend: ':' | prepend: termsField | prepend: '/browse.html#' | relative_url }}">{{ s | strip }}</a>{% endfor %}
+                        {% if termsField == 'subject' %}
+                        <a class="btn btn-sm btn-subject m-1" href="{{ s | strip | url_param_escape | prepend: ':' | prepend: termsField | prepend: '/browse.html#' | relative_url }}">{{ s | strip }}</a>
+                        {% else %}
+                        <a class="btn btn-sm btn-{{ include.btn-color | default: 'primary' }} m-1" href="{{ s | strip | url_param_escape | prepend: ':' | prepend: termsField | prepend: '/browse.html#' | relative_url }}">{{ s | strip }}</a>
+                        {% endif %}{% endfor %}
         </p>
     </div>
 </div>

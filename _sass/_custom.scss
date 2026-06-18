@@ -2,3 +2,54 @@
     Put your custom SCSS here! 
     This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
 */
+
+/* Override Bootstrap primary button color */
+:root {
+  --bs-primary: #213338; /* button color */
+}
+
+.btn-primary {
+  background-color: #213338 !important;
+  border-color: #213338 !important;
+  color: #fff !important;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: darken(#213338, 6%) !important;
+  border-color: darken(#213338, 8%) !important;
+  color: #fff !important;
+}
+
+/* Outline primary buttons */
+.btn-outline-primary {
+  color: #213338 !important;
+  border-color: #213338 !important;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+  background-color: #213338 !important;
+  color: #fff !important;
+}
+
+/* Subject buttons */
+.btn-subject {
+  background-color: #a6795d !important;
+  border-color: #a6795d !important;
+  color: #fff !important;
+}
+.btn-subject:hover,
+.btn-subject:focus {
+  background-color: #8f624d !important;
+  border-color: #8f624d !important;
+  color: #fff !important;
+}
+
+.btn-outline-subject {
+  color: #a6795d !important;
+  border-color: #a6795d !important;
+}
+.btn-outline-subject:hover,
+.btn-outline-subject:focus {
+  background-color: #a6795d !important;
+  color: #fff !important;
+}

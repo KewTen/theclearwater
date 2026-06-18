@@ -14,6 +14,10 @@
 {%- assign cloud-fields = include.fields | default: "subject" -%}
 {%- assign uniqTerms = items | field_count_uniq: cloud-fields | where_exp: 't','t[1] >= termsMin' -%}
 {% if include.stopwords %}{% assign uniqTerms = uniqTerms | remove_stopwords: include.stopwords %}{%- endif -%}
+{%- assign buttonVar = include.button | default: "outline-primary" -%}
+{%- if cloud-fields contains 'subject' and include.button == nil -%}
+{%- assign buttonVar = "subject" -%}
+{%- endif -%}
 <script>
 (function(){    
     /* subject terms + count */
@@ -45,7 +49,7 @@
         {% if include.shuffle == true %}shuffle(array);{% endif %}
         for (let i = 0; i < array.length; i++) {
             size = mapSize(array[i][1]);
-            items += '<a class="btn btn-{{ include.button | default: "outline-primary" }} m-2 tagcloud' + size + '" href="{{ "/browse.html" | relative_url }}#' + array[i][2] + ':' + encodeURIComponent(array[i][0]) + '" >' + array[i][0] + '</a>';
+            items += '<a class="btn btn-{{ buttonVar }} m-2 tagcloud' + size + '" href="{{ "/browse.html" | relative_url }}#' + array[i][2] + ':' + encodeURIComponent(array[i][0]) + '" >' + array[i][0] + '</a>';
         }
         cloud.innerHTML = items;
     }
