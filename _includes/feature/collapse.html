@@ -7,11 +7,19 @@
     Options:
     - "button" = text of the button that triggers the collapse to open (required)
     - "text" = text inside the collapse, Markdown is supported (required, hint: use a capture statement to add more complex text!)
-    - "color" = color for the trigger button (optional, default: primary)
+    - "color" = color for the trigger button (optional). Use a Bootstrap color key like "success" or a raw hex code like "#15454D". Default: '#15454D'.
    
 {%- endcomment -%}
+{% assign collapse_color = include.color | default: '#15454D' %}
+{% assign collapse_button_class = 'btn' %}
+{% assign collapse_button_style = '' %}
+{% if collapse_color contains '#' %}
+    {% assign collapse_button_style = 'background-color: ' | append: collapse_color | append: '; border-color: ' | append: collapse_color | append: '; color: #fff;' %}
+{% else %}
+    {% assign collapse_button_class = collapse_button_class | append: ' btn-' | append: collapse_color %}
+{% endif %}
 <p>
-    <button class="btn btn-{{ include.color | default: 'primary' }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ include.button | slugify }}" aria-expanded="false" aria-controls="collapse{{ include.button | slugify }}">
+    <button class="{{ collapse_button_class }}" style="{{ collapse_button_style }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ include.button | slugify }}" aria-expanded="false" aria-controls="collapse{{ include.button | slugify }}">
         {{ include.button }}
     </button>
 </p>
