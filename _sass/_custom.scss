@@ -3,31 +3,35 @@
     This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
 */
 
-/* Override Bootstrap primary button color */
+/* Override Bootstrap primary and purple/indigo theme colors */
 :root {
-  --bs-primary: #213338; /* button color */
+  --bs-primary: #15454D; /* button color */
+  --bs-purple: #15454D;
+  --bs-purple-rgb: 21, 69, 77;
+  --bs-indigo: #15454D;
+  --bs-indigo-rgb: 21, 69, 77;
 }
 
 .btn-primary {
-  background-color: #213338 !important;
-  border-color: #213338 !important;
+  background-color: #15454D !important;
+  border-color: #15454D !important;
   color: #fff !important;
 }
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: darken(#213338, 6%) !important;
-  border-color: darken(#213338, 8%) !important;
+  background-color: darken(#15454D, 6%) !important;
+  border-color: darken(#15454D, 8%) !important;
   color: #fff !important;
 }
 
 /* Outline primary buttons */
 .btn-outline-primary {
-  color: #213338 !important;
-  border-color: #213338 !important;
+  color: #15454D !important;
+  border-color: #15454D !important;
 }
 .btn-outline-primary:hover,
 .btn-outline-primary:focus {
-  background-color: #213338 !important;
+  background-color: #15454D !important;
   color: #fff !important;
 }
 
@@ -52,4 +56,10 @@
 .btn-outline-subject:focus {
   background-color: #a6795d !important;
   color: #fff !important;
+}
+
+/* Home banner overlay color */
+#home-banner .bg-dark.bg-opacity-75,
+#about-feature .bg-dark.bg-opacity-75 {
+  background-color: rgba(21, 69, 77, 0.75) !important;
 }
