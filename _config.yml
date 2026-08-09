@@ -8,9 +8,9 @@
 # URL VARIABLES
 #
 # site domain, full URL to the production location of your collection
-url: https://kewten.github.io
+url: https://hopeforthehudson.com
 # path to location on the domain if necessary e.g. /digital/hjccc
-baseurl: /theclearwater
+baseurl: ""
 # location of code, the full url to your github repository
 source-code: https://github.com/KewTen/theclearwater
 
